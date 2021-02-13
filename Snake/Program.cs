@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading;
+using System.Linq;
+using System.Text;
 
 namespace Snake
 {
@@ -8,9 +10,9 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Console.SetWindowSize(1, 1);
-            Console.SetBufferSize(80, 25);
             Console.SetWindowSize(80, 25);
+            Console.SetBufferSize(80, 25);
+            
 
             HorizontalLine upLine = new HorizontalLine(0, 78, 0, '+');
             HorizontalLine downLine = new HorizontalLine(0, 78, 24, '+');
@@ -45,11 +47,9 @@ namespace Snake
 
                 if (Console.KeyAvailable)
                 {
-                    ConsoleKeyInfo key = Console.ReadKey();
+                    ConsoleKeyInfo key = Console.ReadKey(true);
                     snake.HandleKey(key.Key);                 
                 }
-                Thread.Sleep(100);
-                snake.Move();
             }
         }
     }

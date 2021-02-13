@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Snake
 {
     class FoodCreator
     {
-        int mapWidth;
+        int mapWidht;
         int mapHeight;
         char sym;
 
@@ -14,15 +16,15 @@ namespace Snake
 
         public FoodCreator(int mapWidth, int mapHeight, char sym)
         {
-            this.mapWidth = mapWidth;
+            this.mapWidht = mapWidth;
             this.mapHeight = mapHeight;
             this.sym = sym;
         }
 
         public Point CreateFood()
         {
-            int x = random.Next(2, mapWidth - 2);
-            int y = random.Next(2, mapWidth - 2);
+            int x = random.Next(2, mapWidht - 2);
+            int y = random.Next(2, mapWidht - 2);
             return new Point(x, y, sym);
         }
     }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Snake
 {
@@ -15,11 +17,11 @@ namespace Snake
 
         }
 
-        public Point(int _x, int _y, char _sym)
+        public Point(int x, int y, char sym)
         {
-            x = _x;
-            y = _y;
-            sym = _sym;
+            this.x = x;
+            this.y = y;
+            this.sym = sym;
         }
 
         public Point(Point p)
