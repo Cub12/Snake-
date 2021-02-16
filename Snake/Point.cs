@@ -58,6 +58,7 @@ namespace Snake
 		public void Draw()
 		{
 			Console.SetCursorPosition(x, y);
+			Console.ForegroundColor = ConsoleColor.Green;
 			Console.Write(sym);
 		}
 

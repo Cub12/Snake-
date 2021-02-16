@@ -10,10 +10,10 @@ namespace Snake
 	{
 		static void Main(string[] args)
 		{
-			Console.SetWindowSize(80, 25);
-			Console.SetBufferSize(80, 25);
+			Console.SetWindowSize(182, 25);
+			Console.SetBufferSize(182, 25);
 
-			Walls walls = new Walls(80, 25);
+			Walls walls = new Walls(182, 25);
 			walls.Draw();
 
 			// Отрисовка точек			
@@ -21,7 +21,7 @@ namespace Snake
 			Snake snake = new Snake(p, 4, Direction.RIGHT);
 			snake.Draw();
 
-			FoodCreator foodCreator = new FoodCreator(80, 25, '$');
+			FoodCreator foodCreator = new FoodCreator(182, 25, 's');
 			Point food = foodCreator.CreateFood();
 			food.Draw();
 
@@ -57,14 +57,11 @@ namespace Snake
 		{
 			int xOffset = 25;
 			int yOffset = 8;
-			Console.ForegroundColor = ConsoleColor.Red;
+			Console.ForegroundColor = ConsoleColor.Yellow;
 			Console.SetCursorPosition(xOffset, yOffset++);
-			WriteText("============================", xOffset, yOffset++);
-			WriteText("И Г Р А    О К О Н Ч Е Н А", xOffset + 1, yOffset++);
-			yOffset++;
-			WriteText("Догулявся", xOffset + 2, yOffset++);
-			WriteText(" Ну ничего страшного", xOffset + 1, yOffset++);
-			WriteText("  Тяу-тяу-тяу", xOffset, yOffset++);
+			WriteText("============================", 91, 11);
+			WriteText("И Г Р А    О К О Н Ч Е Н А", 91, 12);
+			WriteText("ДОГУЛЯВСЯ...", 91, 13);
 		}
 
 		static void WriteText(String text, int xOffset, int yOffset)
